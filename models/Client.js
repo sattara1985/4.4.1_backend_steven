@@ -1,4 +1,4 @@
-const connection = require("../knexfile")['development'];
+const connection = require("../knexfile")['development'];// se puede cambiar 'development' es en desarrollo en el knexfile.js estan las otras rutas como staging o producccion
 const database = require('knex')(connection);
 
 const getAllClients = () => {
