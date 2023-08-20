@@ -12,6 +12,8 @@ router.post('/', ClientController.insertClient);
 
 // Actualizamos un cliente
 router.put('/:id', ClientController.updateClient)
+// pramateros son los que encontramos en la ruta
+/// http://localhost:3000/api/v1/clients/ 
 
 // Eliminar un cliente
 router.delete('/:id',ClientController.deleteClient)
