@@ -11,7 +11,7 @@ const getClient = (idClient) => {
     // select * from clients where id = idClient
     return database('clients')
         .where( { id: idClient })
-        .first();
+        .first(); // si no le pongo esto me devuelve un array
 
 };
 
