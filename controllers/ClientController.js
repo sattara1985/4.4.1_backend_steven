@@ -23,7 +23,7 @@ const insertClient = (req, res) => {
     if(first_name !== '' && last_name !== ''){
         clientModel
             .insertClient({ first_name, last_name,active })
-            .then(results => res.status(201).json(results))
+            .then(results => res.status(201).json({message: 'Cliente agregado exitosamente'}))
             .catch(error => res.status(500).json(error));
     }else{
         res.status(400).send({message:'Nombre Invalido'})
@@ -34,11 +34,15 @@ const insertClient = (req, res) => {
 const updateClient = (req, res) => {
     const { id } = req.params
     const { first_name, last_name,active } = req.body
-
+    if(first_name !== '' && last_name !== ''){
     clientModel
         .updateClient(id,{ first_name, last_name,active })
-        .then(results => res.status(201).json(results))
+        .then(results => res.status(201).json({message: 'Usuario Actualizado correctamente'}))
         .catch(error => res.status(500).json(error));
+    }else{
+        res.status(400).send('Nombre Invalido')
+    }
+
 }
 
 const deleteClient = (req,res) => {
@@ -46,7 +50,7 @@ const deleteClient = (req,res) => {
 
     clientModel
         .deleteClient(id)
-        .then(results => res.status(201).json(results))
+        .then(results => res.status(201).json({message: 'Eliminado exitosamente'}))
         .catch(error => res.status(500).json(error));
 }
 
