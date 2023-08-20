@@ -52,6 +52,7 @@ const deleteClient = (req,res) => {
         .deleteClient(id)
         .then(results => res.status(201).json({message: 'Eliminado exitosamente'}))
         .catch(error => res.status(500).json(error));
+        //preguntar porque le id no se reinicia? en postgress lelva el conteo
 }
 
 const insertClients = (req, res) =>  res.status(200).send({
