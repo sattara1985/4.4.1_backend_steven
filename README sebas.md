@@ -124,6 +124,8 @@
         6. Agregar el script `knex_latest`  npm run knex_latest
         crear migracion la tabla y va a la base de datos
 
+        npm run knex_latest
+
             ```json
             "scripts": {
                 "test": "echo \"Error: no test specified\" && exit 1",
