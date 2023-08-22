@@ -87,3 +87,14 @@
     ese ultimo / lo pone en cada productroutes o clinetroutes o saleroutes
     
     8.
+exports.up = function(knex) {
+    return knex.schema.createTable('products',   (table) => {
+        table.increments('id_product').primary();
+        table.integer('SKU').notNullable();
+        table.string('name_product').notNullable();
+        table.string('description').notNullable();
+        table.boolean('active').notNullable();
+        table.timestamp('created_at').defaultTo(knex.fn.now());
+        })
+        
+};

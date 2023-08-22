@@ -8,6 +8,7 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "knex_migrate_client":"knex migrate:make clients",
+    "knex_migrate_product":"knex migrate:make products",
     "knex_latest":"knex migrate:latest"
   },
   "author": "steven atta",

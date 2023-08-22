@@ -9,7 +9,7 @@ const getClients = (req, res) =>  {
 
 const getClient = (req, res) => {
     const { id } = req.params
-
+    //quiero validar que si no existe el cliente me lo diga en un mensaje?
     clientModel
         .getClient(id)
         .then(results => res.status(201).json(results))
