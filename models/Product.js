@@ -1,42 +1,42 @@
 const connection = require("../knexfile")['development'];// se puede cambiar 'development' es en desarrollo en el knexfile.js estan las otras rutas como staging o producccion
 const database = require('knex')(connection);
 
-const getAllClients = () => {
+const getAllProducts = () => {
     // consultado a todos los elementos dentro del la tabla clients
     // select * from clients
-    return database('clients');
+    return database('products');
 };
 
-const getClient = (idClient) => {
+const getProduct = (idProduct) => {
     // select * from clients where id = idClient
-    return database('clients')
-        .where( { id: idClient })
+    return database('products')
+        .where( { id: idProduct })
         .first(); // si no le pongo esto me devuelve un array
 
 };
 
-const insertClient = (client) => {
+const insertProduct = (product) => {
     // insert into clients (first_name,...) values('Maria',...)
-    return database('clients')
-        .insert(client);
+    return database('product')
+        .insert(product);
 };
 
-const updateClient = (idClient, client) => {
-    return database('clients') 
-        .where('id','=',idClient)
-        .update(client)
+const updateProduct = (idProduct, product) => {
+    return database('product') 
+        .where('id','=',idProduct)
+        .update(product)
 }
 
-const deleteClient = (idClient) => {
-    return database('clients')
-        .where('id','=',idClient)
+const deleteProduct = (idProduct) => {
+    return database('product')
+        .where('id','=',idProduct)
         .del()
 }
 
 module.exports = {
-    getAllClients,
-    getClient,
-    insertClient,
-    updateClient,
-    deleteClient
+    getAllProducts,
+    getProduct,
+    insertProduct,
+    updateProduct,
+    deleteProduct
 }
